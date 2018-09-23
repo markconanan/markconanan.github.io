@@ -80,12 +80,6 @@ body {
             font-family: $primaryfont;
             font-size: 3vw;
 
-            // @include tablet {
-            //     display: grid;
-            //     grid-template-areas: "mark""hello";
-            //     font-size: 2rem;
-            // }
-
 
             @include phone {
                 display: grid;
@@ -102,10 +96,6 @@ body {
             text-align: center;
             display: block;
 
-            // @include tablet {
-            //     width: 100%;
-            //     grid-area: hello;
-            // }
 
             @include phone {
                 width: 100%;
@@ -130,11 +120,6 @@ body {
             text-align: left;
             position: relative;
             animation: headeranimation 2s forwards;
-
-            // @include tablet {
-            //     width: 100%;
-            //     grid-area: mark;
-            // }
 
             @include phone {
                 width: 100%;
@@ -275,18 +260,13 @@ body {
         }
 
         .skills {
-            // width: 40%;
             background-color: $bgcolor;
             padding-left: 50px;
             padding-right: 50px;
-            // padding-top: 80px;
             position: relative;
-            // text-align: center;
             display: grid;
             height: auto;
-            // font-size: 2vw;
             font-family: $secondaryfont;
-            // font-style: bold;
             grid-area: skills;
 
             @include phone {
