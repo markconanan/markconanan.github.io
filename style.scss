@@ -1,0 +1,457 @@
+@import 'variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+@mixin phone {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 501px) and (max-width: 960px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 961px) {
+        @content;
+    }
+}
+
+
+body {
+    background-color: $bordercolor;
+    color: $textcolor;
+
+    a:link,
+    a:visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    a:hover,
+    a:active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .nav {
+        overflow: hidden;
+        background-color: $bordercolor;
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 30px;
+        padding: 5px;
+        margin-left: 25px;
+        font-family: Montserrat;
+    }
+
+    .head {
+        top: 0;
+    }
+
+    @keyframes headeranimation {
+        from {
+            background-position: right bottom;
+        }
+
+        to {
+            background-position: left bottom;
+        }
+    }
+
+    main {
+        margin: 30px;
+
+        .header {
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10;
+            margin: 10;
+            font-family: $primaryfont;
+            font-size: 3vw;
+
+            // @include tablet {
+            //     display: grid;
+            //     grid-template-areas: "mark""hello";
+            //     font-size: 2rem;
+            // }
+
+
+            @include phone {
+                display: grid;
+                grid-template-areas: "mark""hello";
+                font-size: 2rem;
+            }
+
+        }
+
+        #h1 {
+            width: 35%;
+            background-color: $bgcolor;
+            position: relative;
+            text-align: center;
+            display: block;
+
+            // @include tablet {
+            //     width: 100%;
+            //     grid-area: hello;
+            // }
+
+            @include phone {
+                width: 100%;
+                grid-area: hello;
+            }
+
+        }
+
+        #hello {
+            position: relative;
+            top: 40%;
+
+        }
+
+        #h2 {
+            width: 65%;
+            background: linear-gradient(to right, $boxcolor1 50%, $bgcolor 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all 2s ease;
+            display: flex;
+            text-align: left;
+            position: relative;
+            animation: headeranimation 2s forwards;
+
+            // @include tablet {
+            //     width: 100%;
+            //     grid-area: mark;
+            // }
+
+            @include phone {
+                width: 100%;
+                grid-area: mark;
+            }
+        }
+
+        #mark {
+            position: relative;
+            top: 40%;
+            left: 5%;
+            color: $bgcolor;
+
+            @include phone {
+                top: 30%;
+                left: 0%;
+                text-align: center;
+            }
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .deskimage {
+            background-image: url("img/parallaxbackground.jpg");
+            height: 50%;
+        }
+
+        .introgrid {
+            background-image: url("img/aboutme.jpeg");
+            height: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "intro empty""introparagraph empty";
+
+            @include phone {
+                grid-template-columns: 1fr;
+                grid-template-areas: "intro""introparagraph";
+                height: auto;
+            }
+
+            @include tablet {
+                grid-template-columns: 60% 40%;
+                grid-template-areas: "intro empty""introparagraph empty";
+                height: auto;
+            }
+
+        }
+
+        .empty {
+            background-color: $bgcolor;
+            height: 30px;
+
+            @include phone {
+                height: 10px;
+            }
+        }
+
+        .empty2 {
+            background-color: $bgcolor;
+            grid-area: empty;
+        }
+
+
+        .intro {
+            background-color: $bgcolor;
+            display: grid;
+            padding-top: 20px;
+            padding-left: 100px;
+            height: auto;
+            position: relative;
+            font-size: 2rem;
+            grid-area: intro;
+            font-family: $secondaryfont;
+            color: $textcolor;
+
+
+            @include phone {
+                width: 100%;
+                line-height: normal;
+                padding: 30px;
+                font-size: 1.5rem;
+            }
+
+            @include tablet {
+                padding-left: 50px;
+            }
+
+        }
+
+        .introparagraph {
+            background-color: $bgcolor;
+            display: grid;
+            text-align: justify;
+            padding-top: 20px;
+            padding-left: 100px;
+            padding-right: 40px;
+            height: auto;
+            font-size: 1.5vw;
+            grid-area: introparagraph;
+            font-family: $font3;
+            font-style: italic;
+
+            @include phone {
+                width: 100%;
+                line-height: normal;
+                padding: 30px;
+                font-size: 1rem;
+            }
+
+            @include tablet {
+                padding-left: 50px;
+            }
+        }
+
+
+        .grid {
+            background-image: url("img/skills.jpeg");
+            height: auto;
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 100px 1fr 1fr 1fr 1fr;
+            grid-template-areas: "empty . . skills skills";
+
+            @include phone {
+                grid-template-columns: 1fr;
+                grid-template-areas: ".""skills";
+            }
+
+            @include tablet {
+                grid-template-columns: 50px 1fr 1fr;
+                grid-template-areas: "empty . skills";
+            }
+        }
+
+        .skills {
+            // width: 40%;
+            background-color: $bgcolor;
+            padding-left: 50px;
+            padding-right: 50px;
+            // padding-top: 80px;
+            position: relative;
+            // text-align: center;
+            display: grid;
+            height: auto;
+            // font-size: 2vw;
+            font-family: $secondaryfont;
+            // font-style: bold;
+            grid-area: skills;
+
+            @include phone {
+                width: 100%;
+                padding: 30px;
+            }
+
+        }
+
+
+        .projects {
+            width: 100%;
+            background-color: $boxcolor1;
+            display: grid;
+            text-align: left;
+            padding: 20px;
+            position: relative;
+            color: $bgcolor;
+            height: auto;
+            font-family: $primaryfont;
+            margin-bottom: 10px;
+
+            @include phone {
+                width: 100%;
+                padding: 30px;
+            }
+
+            @include tablet {
+                padding: 50px;
+            }
+        }
+
+
+        .aboutme {
+            height: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas: "history details details details";
+
+            @include phone {
+                grid-template-columns: 1fr;
+                grid-template-areas: "history""details";
+            }
+        }
+
+        .history {
+            background-color: $bgcolor;
+            display: grid;
+            padding-top: 20px;
+            padding-left: 100px;
+            text-align: left;
+            font-size: 1.2rem;
+            height: auto;
+            position: relative;
+            grid-area: history;
+            font-family: $font3;
+
+            @include phone {
+                padding: 30px;
+                text-align: center;
+            }
+
+            @include tablet {
+                padding: 50px;
+            }
+        }
+
+        .details {
+
+            background-color: $bgcolor;
+            display: grid;
+            text-align: justify;
+            position: relative;
+            padding-top: 20px;
+            padding-left: 100px;
+            padding-right: 50px;
+            padding-bottom: 30px;
+            height: auto;
+            font-size: 1rem;
+            font-family: $primaryfont;
+            font-style: italic;
+            grid-area: details;
+            line-height: 150%;
+
+            @include phone {
+                padding: 30px;
+                text-align: center;
+            }
+
+            @include tablet {
+                padding: 50px;
+            }
+        }
+
+        .contactgrid {
+            height: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: "contactme contactdetails contactdetails";
+            padding-bottom: 30px;
+
+            @include phone {
+                grid-template-columns: 1fr;
+                grid-template-areas: "contactme""contactdetails";
+            }
+
+            @include tablet {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "contactme contactdetails";
+                height: auto;
+            }
+        }
+
+        .contactme {
+            background-color: $bordercolor;
+            display: grid;
+            padding-top: 50px;
+            padding-left: 100px;
+            height: 100px;
+            position: relative;
+            grid-area: contactme;
+            font-family: $font3;
+
+            @include phone {
+                padding: 50px;
+            }
+
+            @include tablet {
+                padding: 50px;
+            }
+
+        }
+
+        .contactdetails {
+            background-color: $bordercolor;
+            display: grid;
+            padding-top: 50px;
+            height: auto;
+            position: relative;
+            font-family: $primaryfont;
+            grid-area: contactdetails;
+            padding-bottom: 50px;
+
+            @include phone {
+                padding: 50px;
+            }
+        }
+    }
+
+    .footer {
+        bottom: 0;
+
+        a:link,
+        a:active,
+        a:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover,
+
+            {
+            text-decoration: underline;
+        }
+    }
+
+
+}

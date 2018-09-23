@@ -1,0 +1,510 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+body a:link,
+body a:visited {
+  color: inherit;
+  text-decoration: underline;
+}
+
+body a:hover,
+body a:active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+body .nav {
+  overflow: hidden;
+  background-color: #f2f2f2;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  margin-left: 25px;
+  font-family: Montserrat;
+}
+
+body .head {
+  top: 0;
+}
+
+@-webkit-keyframes headeranimation {
+  from {
+    background-position: right bottom;
+  }
+  to {
+    background-position: left bottom;
+  }
+}
+
+@keyframes headeranimation {
+  from {
+    background-position: right bottom;
+  }
+  to {
+    background-position: left bottom;
+  }
+}
+
+body main {
+  margin: 30px;
+}
+
+body main .header {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10;
+  margin: 10;
+  font-family: Montserrat;
+  font-size: 3vw;
+}
+
+@media screen and (max-width: 500px) {
+  body main .header {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "mark" "hello";
+    font-size: 2rem;
+  }
+}
+
+body main #h1 {
+  width: 35%;
+  background-color: #F2EFE6;
+  position: relative;
+  text-align: center;
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+  body main #h1 {
+    width: 100%;
+    grid-area: hello;
+  }
+}
+
+body main #hello {
+  position: relative;
+  top: 40%;
+}
+
+body main #h2 {
+  width: 65%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #d3000a), color-stop(50%, #F2EFE6));
+  background: linear-gradient(to right, #d3000a 50%, #F2EFE6 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  position: relative;
+  -webkit-animation: headeranimation 2s forwards;
+          animation: headeranimation 2s forwards;
+}
+
+@media screen and (max-width: 500px) {
+  body main #h2 {
+    width: 100%;
+    grid-area: mark;
+  }
+}
+
+body main #mark {
+  position: relative;
+  top: 40%;
+  left: 5%;
+  color: #F2EFE6;
+}
+
+@media screen and (max-width: 500px) {
+  body main #mark {
+    top: 30%;
+    left: 0%;
+    text-align: center;
+  }
+}
+
+body main .parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body main .deskimage {
+  background-image: url("img/parallaxbackground.jpg");
+  height: 50%;
+}
+
+body main .introgrid {
+  background-image: url("img/aboutme.jpeg");
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "intro empty" "introparagraph empty";
+}
+
+@media screen and (max-width: 500px) {
+  body main .introgrid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "intro" "introparagraph";
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .introgrid {
+    -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+        grid-template-areas: "intro empty" "introparagraph empty";
+    height: auto;
+  }
+}
+
+body main .empty {
+  background-color: #F2EFE6;
+  height: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  body main .empty {
+    height: 10px;
+  }
+}
+
+body main .empty2 {
+  background-color: #F2EFE6;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: empty;
+}
+
+body main .intro {
+  background-color: #F2EFE6;
+  display: -ms-grid;
+  display: grid;
+  padding-top: 20px;
+  padding-left: 100px;
+  height: auto;
+  position: relative;
+  font-size: 2rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: intro;
+  font-family: Lato;
+  color: black;
+}
+
+@media screen and (max-width: 500px) {
+  body main .intro {
+    width: 100%;
+    line-height: normal;
+    padding: 30px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .intro {
+    padding-left: 50px;
+  }
+}
+
+body main .introparagraph {
+  background-color: #F2EFE6;
+  display: -ms-grid;
+  display: grid;
+  text-align: justify;
+  padding-top: 20px;
+  padding-left: 100px;
+  padding-right: 40px;
+  height: auto;
+  font-size: 1.5vw;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: introparagraph;
+  font-family: Libre Baskerville;
+  font-style: italic;
+}
+
+@media screen and (max-width: 500px) {
+  body main .introparagraph {
+    width: 100%;
+    line-height: normal;
+    padding: 30px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .introparagraph {
+    padding-left: 50px;
+  }
+}
+
+body main .grid {
+  background-image: url("img/skills.jpeg");
+  height: auto;
+  min-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100px 1fr 1fr 1fr 1fr;
+      grid-template-columns: 100px 1fr 1fr 1fr 1fr;
+      grid-template-areas: "empty . . skills skills";
+}
+
+@media screen and (max-width: 500px) {
+  body main .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "." "skills";
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .grid {
+    -ms-grid-columns: 50px 1fr 1fr;
+        grid-template-columns: 50px 1fr 1fr;
+        grid-template-areas: "empty . skills";
+  }
+}
+
+body main .skills {
+  background-color: #F2EFE6;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  height: auto;
+  font-family: Lato;
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-area: skills;
+}
+
+@media screen and (max-width: 500px) {
+  body main .skills {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+body main .projects {
+  width: 100%;
+  background-color: #d3000a;
+  display: -ms-grid;
+  display: grid;
+  text-align: left;
+  padding: 20px;
+  position: relative;
+  color: #F2EFE6;
+  height: auto;
+  font-family: Montserrat;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  body main .projects {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .projects {
+    padding: 50px;
+  }
+}
+
+body main .aboutme {
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "history details details details";
+}
+
+@media screen and (max-width: 500px) {
+  body main .aboutme {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "history" "details";
+  }
+}
+
+body main .history {
+  background-color: #F2EFE6;
+  display: -ms-grid;
+  display: grid;
+  padding-top: 20px;
+  padding-left: 100px;
+  text-align: left;
+  font-size: 1.2rem;
+  height: auto;
+  position: relative;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: history;
+  font-family: Libre Baskerville;
+}
+
+@media screen and (max-width: 500px) {
+  body main .history {
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .history {
+    padding: 50px;
+  }
+}
+
+body main .details {
+  background-color: #F2EFE6;
+  display: -ms-grid;
+  display: grid;
+  text-align: justify;
+  position: relative;
+  padding-top: 20px;
+  padding-left: 100px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  height: auto;
+  font-size: 1rem;
+  font-family: Montserrat;
+  font-style: italic;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: details;
+  line-height: 150%;
+}
+
+@media screen and (max-width: 500px) {
+  body main .details {
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .details {
+    padding: 50px;
+  }
+}
+
+body main .contactgrid {
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "contactme contactdetails contactdetails";
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  body main .contactgrid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "contactme" "contactdetails";
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .contactgrid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "contactme contactdetails";
+    height: auto;
+  }
+}
+
+body main .contactme {
+  background-color: #f2f2f2;
+  display: -ms-grid;
+  display: grid;
+  padding-top: 50px;
+  padding-left: 100px;
+  height: 100px;
+  position: relative;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: contactme;
+  font-family: Libre Baskerville;
+}
+
+@media screen and (max-width: 500px) {
+  body main .contactme {
+    padding: 50px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  body main .contactme {
+    padding: 50px;
+  }
+}
+
+body main .contactdetails {
+  background-color: #f2f2f2;
+  display: -ms-grid;
+  display: grid;
+  padding-top: 50px;
+  height: auto;
+  position: relative;
+  font-family: Montserrat;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: contactdetails;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 500px) {
+  body main .contactdetails {
+    padding: 50px;
+  }
+}
+
+body .footer {
+  bottom: 0;
+}
+
+body .footer a:link,
+body .footer a:active,
+body .footer a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+body .footer a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=style.css.map */
