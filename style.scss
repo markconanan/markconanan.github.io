@@ -150,6 +150,15 @@ body {
         .deskimage {
             background-image: url("img/parallaxbackground.jpg");
             height: 50%;
+
+            @include phone {
+                background-image: url("img/aboutme.jpeg");
+                background-attachment: local;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 30%;
+            }
         }
 
         .introgrid {

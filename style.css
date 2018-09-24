@@ -154,6 +154,17 @@ body main .deskimage {
   height: 50%;
 }
 
+@media screen and (max-width: 500px) {
+  body main .deskimage {
+    background-image: url("img/aboutme.jpeg");
+    background-attachment: local;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30%;
+  }
+}
+
 body main .introgrid {
   background-image: url("img/aboutme.jpeg");
   height: auto;
